@@ -8,12 +8,35 @@
 #include "Stack.h"
 
 Stack::Stack() {
+    top = 0;
 }
 
-void Stack::push(int x, int y, char command){
+void Stack::push(int x, int y, char command)
+{
+    node* temp = new node;
+    temp->x = x;
+    temp->y = y;
+    temp->command = command;
+    
+    if(top == 0)
+    {
+        temp->next = 0;
+    }
+    else
+    {	
+        temp->next = top;
+    }
+    
+    top = temp;
+    delete temp;
 }
 
 void Stack::pop(){
+    if(top == 0)
+        return;
+    else{
+        top = top->next;
+    }
 }
 
 void Stack::display(){
@@ -21,9 +44,10 @@ void Stack::display(){
 }
 
 node Stack::readTop(){
-    
+    return top;
 }
 
-bool isEmpty(){
-    return top==0;
+bool Stack::isEmpty(){
+    return (top==0);
 }
+

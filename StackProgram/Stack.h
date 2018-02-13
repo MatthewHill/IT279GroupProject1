@@ -28,4 +28,3 @@ private:
 };
 
 #endif /* STACK_H */
-
