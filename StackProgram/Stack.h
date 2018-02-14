@@ -7,24 +7,23 @@
 
 #ifndef STACK_H
 #define STACK_H
+#include <stddef.h>
 
+class Stack {
+private:  
 struct node{
     int x;
     int y;
     char command;
     node *next;
 };
+struct node *top;
 
-class Stack {
-public:
-    Stack();
+public:    
     void push(int x, int y, char command);
     void pop();
-    void display();
-    node readTop();
-    bool isEmpty();
-private:
-    node top;
+    void display();    
+    bool isEmpty();    
 };
 
 #endif /* STACK_H */
