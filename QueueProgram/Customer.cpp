@@ -27,3 +27,4 @@ int Customer::getServiceTime() { return serviceTime; }
 int Customer::getCustomerNumber() { return customerNumber; }
 void Customer::setCustomerNumber(int N){ customerNumber = N;}
 void Customer::setserviceTime(int S) { serviceTime = T;}
+void Customer::setArrivalTime(int A) [ arrivalTime = A;}
