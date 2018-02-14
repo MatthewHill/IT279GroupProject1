@@ -3,6 +3,9 @@
 #include "Stack.h"
 #include <iostream>
 
+Stack::Stack(){ top = 0;}
+Stack::~Stack(){}
+
 void Stack::push(int x, int y, char command){
   node *newNode = new node();
   newNode->x = x;
@@ -22,6 +25,7 @@ void Stack::pop(){
   delete(temp);  //free memory allocated to memory in list
 }
 
+//display entire stack - each node displayed separately
 void Stack::display(){
   node *temp = top;
   while(temp!=NULL) {
@@ -29,9 +33,10 @@ void Stack::display(){
     temp=temp->next;
   }
   std::cout<<"\n";
-  delete(temp);
+  delete(temp);  //free memory
 }
 
+//display top of stack, for testing purposes
 void Stack::displayTop(){
   node *temp = top;
   if(top!=NULL) {
@@ -39,11 +44,12 @@ void Stack::displayTop(){
   } else if(top==NULL) {    
   std::cout<<"0\n";
   }
-  delete(temp);
+  delete(temp);  //free memory
 }
 
 bool Stack::isEmpty(){
-    if(top==NULL)
-      return 1;
+  if(top == 0)
+    return 1;
+  else
     return 0;
 }
