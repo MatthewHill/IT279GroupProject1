@@ -15,23 +15,10 @@ Customer::Customer(int arrivalMinute, int departureMinute, int serviceTime) {
 	this::arrivalMinute = arrivalMinute;
 	this::departureMinute = departureMinute;
 	this::serviceTime = serviceTime;
-	this::x = x;//x serves as the max value
+	this::customerNumber = customerNumber;
 }
 
 int Customer::getArrivalMinute() { return arrivalMinute; }
 int Customer::getDepartureMinute() { return departureMinute; }
 int Customer::getServiceTime() { return serviceTime; }
 
-int Customer::generateArrival()
-{
-	arrivalMinute = (rand() % (x + 1)) +currentTime; // returns a value between 0 and x  .  This needs to be added to the clock in the driver
-	//if we have a global variable for current time, we can add it here
-}
-int Customer::generateServiceTime()
-{
-    serviceTime = (rand() % (x+1))  //returns a value between 0 and x  . 
-}
-int Customer::generateDeparture()
-{
-    departureMinute = currentTime + serviceTime;
-}
