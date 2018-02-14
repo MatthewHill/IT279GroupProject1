@@ -20,9 +20,12 @@ struct node{
 node *top;
 
 public:    
+    Stack();
+    ~Stack();
     void push(int x, int y, char command);
     void pop();
-    void display();    
+    void display();
+    void displayTop();
     bool isEmpty();    
 };
 
