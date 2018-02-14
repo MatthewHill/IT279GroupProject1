@@ -1,13 +1,13 @@
-
 #include "Clock.h"
 #include <cstdlib>
+
 Clock::Clock() {
-	Clockr( 0 ,0);
+	Clock( 0 ,0);
 }
 
-Clock::Clock(int currentTime, int X) {
+Clock::Clock(int currentTime, int x) {
 	this::currentTime = currentTime;
-	this::X = X;//x serves as the max value
+	this::x = x;//x serves as the max value
 }
 int Clock::generateArrival()
 {
@@ -15,5 +15,5 @@ int Clock::generateArrival()
 }
 int Clock::generateServiceTime()
 {
-	return = (rand() % (x+1))  //returns a value between 0 and x  .  This is the actual service time
+	return (rand() % (x + 1));  //returns a value between 0 and x.  This is the actual service time
 }

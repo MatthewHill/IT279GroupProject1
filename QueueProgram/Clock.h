@@ -5,13 +5,13 @@
 class Clock {
 public:
 	Clock();
-	Clock(int currentTime, int X);
+	Clock(int currentTime, int x);
 
-	int generateArrival()
-	int generateServiceTime()
+	int generateArrival();
+	int generateServiceTime();
 private:
-	int currentTime
-	int X
+	int currentTime;
+	int x;
 };
 
 #endif 
