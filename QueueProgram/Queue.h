@@ -19,7 +19,7 @@ public:
     
     int enqueue(Customer cust);
     Customer dequeue();
-    
+    int getSize();
 private:
     node head, tail;
     int size;
