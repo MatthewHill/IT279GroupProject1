@@ -9,7 +9,7 @@
 #define STACK_H
 #include <stddef.h>
 
-class Stack {
+class Stack {  
 private:  
 struct node{
     int x;
@@ -19,13 +19,16 @@ struct node{
 };
 node *top;
 
-public:    
+public:     
     Stack();
     ~Stack();
     void push(int x, int y, char command);
     void pop();
     void display();
     void displayTop();
+    int getx();
+    int gety();
+    char getc();
     bool isEmpty();    
 };
 
