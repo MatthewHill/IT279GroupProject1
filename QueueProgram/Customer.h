@@ -17,15 +17,17 @@
 class Customer {
 public:
     Customer();
-    Customer(int arrivalMinute, int departureMinute, int serviceTime);
+    Customer(int arrivalMinute, int departureMinute, int serviceTime, int customerNumber);
     
     int getArrivalMinute();
     int getDepartureMinute();
     int getServiceTime();
+    int getCustomerNumber();
 private:
     int arrivalMinute;
     int departureMinute;
     int serviceTime;
+    int customerNumber;
 };
 
 #endif /* CUSTOMER_H */
