@@ -17,7 +17,7 @@ struct node{
     char command;
     node *next;
 };
-struct node *top;
+node *top;
 
 public:    
     void push(int x, int y, char command);
