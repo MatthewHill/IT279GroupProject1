@@ -11,4 +11,4 @@ Calc: Calc.cpp
 	$(CC) $(CFLAGS) -c Calc.cpp
 
 clean:
-	rm *.o calc
+	rm *.o Calc
