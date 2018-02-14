@@ -44,3 +44,7 @@ Customer Queue::dequeue(){
     delete temp;               // memory leak.
     return poppedNode;
 }
+
+int Queue::getSize(){
+    return size;
+}
