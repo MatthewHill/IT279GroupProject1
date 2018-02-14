@@ -15,7 +15,7 @@ void Stack::push(int x, int y, char command){
 void Stack::pop(){
   node *temp = top;
   if(top==NULL) {
-    std::cout<<"Empty stack.\n";
+    std::cout<<"Empty stack.\n";  //should never see this message, should be caught
     return;
   }  
   top = top->next;
@@ -29,10 +29,21 @@ void Stack::display(){
     temp=temp->next;
   }
   std::cout<<"\n";
+  delete(temp);
+}
+
+void Stack::displayTop(){
+  node *temp = top;
+  if(top!=NULL) {
+    std::cout<<temp->x<<"\n";
+  } else if(top==NULL) {    
+  std::cout<<"0\n";
+  }
+  delete(temp);
 }
 
 bool Stack::isEmpty(){
     if(top==NULL)
-      return true;
-    return false;    
+      return 1;
+    return 0;
 }
