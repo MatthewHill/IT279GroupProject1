@@ -5,8 +5,9 @@
 * Created on February 7, 2018, 6:59 PM
 */
 
-#include <cstdlib>
 #include "Customer.h"
+#include <cstdlib>
+
 
 
 Customer::Customer() {
