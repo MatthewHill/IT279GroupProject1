@@ -5,19 +5,19 @@
 * Created on February 2, 2018, 4:15 PM
 */
 #include "Customer.h"
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef CUSTOMQUEUE_H
+#define CUSTOMQUEUE_H
 
 struct node {
 	Customer data;
 	node* next;
 };
 
-class Queue {
+class CUSTOMQueue {
 public:
-	Queue();
+	CUSTOMQueue();
 
-	int enqueue(Customer cust);
+	void enqueue(Customer cust);
 	Customer getCustomer();
 	Customer dequeue();
 	int getSize();

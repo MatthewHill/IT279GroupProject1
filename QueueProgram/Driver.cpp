@@ -18,7 +18,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 	int i = 1; //customer index for arrival
 	int input;
 	Clock myClock(0, input); //initialize clock to 0 and a max value of user choosing
-	Queue myQueue(); //initialize Queue
+	CUSTOMQueue myQueue; //initialize Queue
 
 	//1.	Choose a random integer between 1 and x to determine the minute at which the first customer arrives.
 	cout << "Enter a value X for maximum arrival and service delay";
@@ -66,7 +66,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 					//Print a departure message;
 					cout << "Customer " << custVector[currentCustomer].getCustomerNumber() << " left at " << custVector[currentCustomer].getDepartureMinute() << "\n";
 						//Dequeue the next customer to be serviced;
-					custVector[currentCustomer + 1].dequeue();
+					myQueue.dequeue();
 					customerLine = customerLine - 1;
 						//Determine customer’s service completion time;
 					if (custVector[currentCustomer].getDepartureMinute() - custVector[currentCustomer].getServiceTime() - custVector[currentCustomer].getArrivalMinute() > MaxWait) //Check wait time and compare with max
@@ -77,7 +77,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 					custVector[currentCustomer].setServiceTime(myClock.generateServiceTime()); //Set service time for next customer
 					custVector[currentCustomer].setDepartureTime(myClock.getCurrentTime() + custVector[currentCustomer].getServiceTime()); //Calculate the departure time for the next customer in line
 				}
-			myClock.incrementCurrentTime();
+			myClock.setCurrentTime(myClock.getCurrentTime() + 1);
 	}
 	cout << "The maximum number of customers in the queue at one time was: " << MaxCustomers << "\n"; //Note that the number of customers in the queue does not include the one being waited on
 	cout << "The longest wait any one customer experiences was: " << MaxWait << "\n"; //wait does not include service time

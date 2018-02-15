@@ -9,13 +9,13 @@
 
 #define NULL nullptr
 
-Queue::Queue() {
+CUSTOMQueue::CUSTOMQueue() {
 	size = 0;
 	head = NULL;
 	tail = NULL;
 }
 
-int Queue::enqueue(Customer cust) {
+void CUSTOMQueue::enqueue(Customer cust) {
 	node *temp = new node;
 	temp->data = cust;
 	temp->next = NULL;
@@ -31,15 +31,13 @@ int Queue::enqueue(Customer cust) {
 	}
 
 	size++;
-
-	return 0;
 }
 
-Customer Queue::getCustomer() {
+Customer CUSTOMQueue::getCustomer() {
 	return (*head).data;
 }
 
-Customer Queue::dequeue() {
+Customer CUSTOMQueue::dequeue() {
 	node* temp;
 	temp = head;
 	head = head->next;
@@ -51,6 +49,6 @@ Customer Queue::dequeue() {
 	return cust;
 }
 
-int Queue::getSize() {
+int CUSTOMQueue::getSize() {
 	return size;
 }

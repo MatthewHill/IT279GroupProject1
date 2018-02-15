@@ -9,7 +9,7 @@ public:
 	int generateArrival();
 	int generateServiceTime();
 	int getCurrentTime();
-    void incrementCurrentTime();
+	void setCurrentTime(int C);
 private:
 	int currentTime;
 	int x;

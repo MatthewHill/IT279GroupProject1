@@ -12,12 +12,17 @@ Clock::Clock(int currentTime, int x) {
 }
 int Clock::generateArrival()
 {
-	return (rand() % (x + 1)) + currentTime; // returns a value between 0 and x and adds it to the clock.  This is the actual arrival time
+	int random;
+	random = rand() % x + 1;
+	random = random + currentTime;
+	return random; // returns a value between 0 and x and adds it to the clock.  This is the actual arrival time
 }
 int Clock::generateServiceTime()
 {
-	return (rand() % (x + 1));  //returns a value between 0 and x.  This is the actual service time
+	return (rand() % 1 + x);  //returns a value between 0 and x.  This is the actual service time
 }
 int Clock::getCurrentTime() { return currentTime; }
-
-void Clock::incrementCurrentTime(){ currentTime++; }
+void Clock::setCurrentTime(int C)
+{
+	currentTime = C;
+}
