@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-std=c++11
 
-all: Stack Calc
+all: Queue Calc
 	$(CC) $(CFLAGS) Queue.o Calc.o -o StoreSimulator
 
 Queue: Queue.cpp
