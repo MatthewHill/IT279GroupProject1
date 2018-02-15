@@ -33,6 +33,10 @@ int Queue::enqueue(Customer cust){
     return 0;
 }
 
+Customer Queue::getCustomer(){
+    return head.data;
+}
+
 Customer Queue::dequeue(){
     node *temp = new node;
     temp = head;
@@ -40,9 +44,9 @@ Customer Queue::dequeue(){
     
     size--;
     
-    node poppedNode = temp;    // Workaround to return temp without causing a
-    delete temp;               // memory leak.
-    return poppedNode;
+    Customer cust = temp.data;    // Workaround to return Customer without causing a memory leak.
+    delete temp;            
+    return cust;
 }
 
 int Queue::getSize(){
