@@ -9,11 +9,13 @@ using namespace std;
 
 int main() //Not sure if we had an idea for a driver class so I started this.
 {
+	int currentCustomer = 0; //keeps track of the customer being serviced
+	int customerLine = 0; //keeps track of how many customers are in line
 	int MaxCustomers; //Most customers in line
 	int MaxWait; //Max wait time for all customers
 	int arrival; //placeholder for arrival time
 	int customerNumber = 1; //placeholder for customer numbers
-	int i = 1; //customer index
+	int i = 1; //customer index for arrival
 	string input;
 	Clock myClock(0, input); //initialize clock to 0 and a max value of user choosing
 	Queue myQueue(); //initialize Queue
@@ -47,20 +49,32 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 				cout << "Customer  " << custVector[i].customerNumber << " has arrived at " << custVector[i].arrivalTime << "\n";
 				//Enqueue the customer;
 				myQueue.enqueue(custVector[i])
-				//Schedule the arrival time of the next customer;
-				custVector.push_back(Customer());
-				arrival = myClock.generateArrival()
-				custVector[i + 1].setArrivalMinute(arrival);
+					customerLine++; 
+				if (customerLine > MaxCustomers)   // Checks to see if this line is the largest line so far.
+				{
+					MaxCustomers = customerLine;
+				}
+					//Schedule the arrival time of the next customer;
+					custVector.push_back(Customer());
+					arrival = myClock.generateArrival();
+					i++;
+					custVector[i].setArrivalMinute(arrival);
 				//If service was completed for the last customer :
-				if (myClock.currentTime == custVector[i].departureMinute)
+			}
+				if (myClock.currentTime == custVector[currentCustomer].departureMinute)
 				{
 					//Print a departure message;
-					cout << "Customer " << custVector[i].customerNumber << " left at " << custVector[i].departureMinute << "\n";
+					cout << "Customer " << custVector[currentCustomer].customerNumber << " left at " << custVector[currentCustomer].departureMinute << "\n";
 						//Dequeue the next customer to be serviced;
-					custVector[i].dequeue();
+					custVector[currentCustomer + 1].dequeue();
+					customerLine = customerLine - 1;
 						//Determine customer’s service completion time;
+					if (custVector[currentCustomer].departure - custVector[currentCustomer.serviceTime - custVector[currentCustomer].arrivalMinute > MaxWait) //Check wait time and compare with max
+					{
+						MaxWait = (custVector[currentCustomer].departure - custVector[currentCustomer.serviceTime - custVector[currentCustomer].arrivalMinute);
+					}
+					currentCustomer = currentCustomer + 1;  //Goes to the next customer
 				}
-			}
 			myClock.currentTime = myClock.currentTime + 1;
 	}
 	cout << "The maximum number of customers in the queue at one time was: " << MaxCustomers << "\n"; //Note that the number of customers in the queue does not include the one being waited on
