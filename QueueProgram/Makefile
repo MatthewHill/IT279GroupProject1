@@ -2,7 +2,7 @@ CC=g++
 CFLAGS=-std=c++11
 
 all: Stack Calc
-	g++ -std=c++11 Stack.o Calc.o -o Calc
+	$(CC) $(CFLAGS) Stack.o Calc.o -o Calc
 
 Stack: Stack.cpp
 	$(CC) $(CFLAGS) -c Stack.cpp
