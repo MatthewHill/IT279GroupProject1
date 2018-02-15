@@ -19,3 +19,5 @@ int Clock::generateServiceTime()
 	return (rand() % (x + 1));  //returns a value between 0 and x.  This is the actual service time
 }
 int Clock::getCurrentTime() { return currentTime; }
+
+void Clock::incrementCurrentTime(){ currentTime++; }
