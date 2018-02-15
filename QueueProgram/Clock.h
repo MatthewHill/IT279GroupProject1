@@ -1,4 +1,3 @@
-
 #ifndef ClOCK_H
 #define CLOCK_H
 
@@ -9,6 +8,7 @@ public:
 
 	int generateArrival();
 	int generateServiceTime();
+	int getCurrentTime();
 private:
 	int currentTime;
 	int x;

@@ -11,20 +11,21 @@
 
 
 Customer::Customer() {
-	Customer(0, 0, 0 ,0);
+	Customer(0, 0, 0, 0);
 }
 
 Customer::Customer(int arrivalMinute, int departureMinute, int serviceTime, int customerNumber) {
-	this::arrivalMinute = arrivalMinute;
-	this::departureMinute = departureMinute;
-	this::serviceTime = serviceTime;
-	this::customerNumber = customerNumber;
+	Customer::arrivalMinute = arrivalMinute;
+	Customer::departureMinute = departureMinute;
+	Customer::serviceTime = serviceTime;
+	Customer::customerNumber = customerNumber;
 }
 
 int Customer::getArrivalMinute() { return arrivalMinute; }
 int Customer::getDepartureMinute() { return departureMinute; }
 int Customer::getServiceTime() { return serviceTime; }
 int Customer::getCustomerNumber() { return customerNumber; }
-void Customer::setCustomerNumber(int N){ customerNumber = N;}
-void Customer::setServiceTime(int S) { serviceTime = T;}
-void Customer::setArrivalTime(int A) { arrivalMinute = A;}
+void Customer::setCustomerNumber(int N) { customerNumber = N; }
+void Customer::setServiceTime(int T) { serviceTime = T; }
+void Customer::setArrivalTime(int A) { arrivalMinute = A; }
+void Customer::setDepartureTime(int D) { departureMinute = D; }
