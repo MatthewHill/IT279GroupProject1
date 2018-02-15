@@ -2,10 +2,10 @@ CC=g++
 CFLAGS=-std=c++11
 
 all: Stack Calc
-	$(CC) $(CFLAGS) Stack.o Calc.o -o Calc
+	$(CC) $(CFLAGS) Queue.o Calc.o -o StoreSimulator
 
-Stack: Stack.cpp
-	$(CC) $(CFLAGS) -c Stack.cpp
+Queue: Queue.cpp
+	$(CC) $(CFLAGS) -c Queue.cpp
 
 Calc: Calc.cpp
 	$(CC) $(CFLAGS) -c Calc.cpp
