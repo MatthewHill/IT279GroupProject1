@@ -1,14 +1,20 @@
 CC=g++
 CFLAGS=-std=c++11
 
-all: Queue Calc
-	$(CC) $(CFLAGS) Queue.o Calc.o -o StoreSimulator
+all: Queue Customer Calc Clock Driver
+	$(CC) $(CFLAGS) *.o -o StoreSimulator
 
 Queue: Queue.cpp
 	$(CC) $(CFLAGS) -c Queue.cpp
 
-Calc: Calc.cpp
-	$(CC) $(CFLAGS) -c Calc.cpp
+Customer: Customer.cpp
+	$(CC) $(CFLAGS) -c Customer.cpp
+
+Calc: Driver.cpp
+	$(CC) $(CFLAGS) -c Driver.cpp
+
+Clock: Clock.cpp
+	$(CC) $(CFLAGS) -c Clock.cpp
 
 clean:
 	rm *.o Calc
