@@ -1,8 +1,9 @@
 CC=g++
 CFLAGS=-std=c++11
+OUTPUTNAME=StoreSimulator
 
 all: Queue Customer Clock Driver
-	$(CC) $(CFLAGS) *.o -o StoreSimulator
+	$(CC) $(CFLAGS) *.o -o $(OUTPUTNAME)
 
 Queue: Queue.cpp
 	$(CC) $(CFLAGS) -c Queue.cpp
@@ -18,4 +19,4 @@ Clock: Clock.cpp
 
 clean:
 	rm *.o
-	rm StoreSimulator
+	rm $(OUTPUTNAME)
