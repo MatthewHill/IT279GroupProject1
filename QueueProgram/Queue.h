@@ -10,7 +10,7 @@
 
 struct node {
 	Customer data;
-	node *next;
+	node* next;
 };
 
 class Queue {
@@ -22,8 +22,8 @@ public:
 	Customer dequeue();
 	int getSize();
 private:
-	node *head; 
-	node *tail;
+	node* head; 
+	node* tail;
 	int size;
 };
 
