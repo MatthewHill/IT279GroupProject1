@@ -18,6 +18,7 @@ public:
     Queue();
     
     int enqueue(Customer cust);
+    Customer getCustomer();
     Customer dequeue();
     int getSize();
 private:
@@ -26,4 +27,3 @@ private:
 };
 
 #endif /* QUEUE_H */
-
