@@ -17,4 +17,5 @@ Clock: Clock.cpp
 	$(CC) $(CFLAGS) -c Clock.cpp
 
 clean:
-	rm *.o StoreSimulator
+	rm *.o
+	rm StoreSimulator
