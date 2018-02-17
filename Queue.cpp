@@ -11,8 +11,7 @@
 
 Queue::Queue() {
 	size = 0;
-	head = NULL;
-	tail = NULL;
+
 }
 
 void Queue::enqueue(Customer cust) {
@@ -32,7 +31,7 @@ void Queue::enqueue(Customer cust) {
 
 	size++;
 }
-int Queue::getSize() { return size; }
+
 Customer Queue::getCustomer() {
 	return (*head).data;
 }
@@ -49,6 +48,6 @@ Customer Queue::dequeue() {
 	return cust;
 }
 
-int CUSTOMQueue::getSize() {
+int Queue::getSize() {
 	return size;
 }
