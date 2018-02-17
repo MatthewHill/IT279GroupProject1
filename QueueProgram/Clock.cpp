@@ -6,9 +6,9 @@ Clock::Clock() {
 	Clock(0, 0);
 }
 
-Clock::Clock(int currentTime, int x) {
-	Clock::currentTime = currentTime;
-	Clock::x = x;//x serves as the max value
+Clock::Clock(int time, int maxvalue) {
+	currentTime = time;
+	x = maxvalue;//x serves as the max value
 }
 int Clock::generateArrival()
 {
