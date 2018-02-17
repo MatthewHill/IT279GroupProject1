@@ -4,7 +4,7 @@
 class Clock {
 public:
 	Clock();
-	Clock(int currentTime, int x);
+	Clock(int time, int maxvalue);
 
 	int generateArrival();
 	int generateServiceTime();
