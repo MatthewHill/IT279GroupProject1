@@ -11,8 +11,7 @@
 
 Queue::Queue() {
 	size = 0;
-	head = NULL;
-	tail = NULL;
+
 }
 
 void Queue::enqueue(Customer cust) {
@@ -21,15 +20,15 @@ void Queue::enqueue(Customer cust) {
 	temp->next = NULL;
 
 	if (head == NULL) {
-		head = temp;
-		tail = temp;
-		temp = NULL;
+		head = tail = temp;
+        head->next = NULL;
 	}
 	else {
 		tail->next = temp;
 		tail = temp;
 	}
-
+    
+    delete temp;
 	size++;
 }
 
@@ -37,16 +36,13 @@ Customer Queue::getCustomer() {
 	return (*head).data;
 }
 
-Customer Queue::dequeue() {
+void Queue::dequeue() {
 	node* temp;
 	temp = head;
 	head = head->next;
 
+    delete temp;
 	size--;
-
-	Customer cust = (*temp).data;    // Workaround to return Customer without causing a memory leak.
-	delete temp;
-	return cust;
 }
 
 int Queue::getSize() {

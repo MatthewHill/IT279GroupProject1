@@ -19,7 +19,7 @@ public:
 
 	void enqueue(Customer cust);
 	Customer getCustomer();
-	Customer dequeue();
+	void dequeue();
 	int getSize();
 private:
 	node* head; 
