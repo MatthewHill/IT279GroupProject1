@@ -17,12 +17,12 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 	int customerNumber = 1; //placeholder for customer numbers
 	int i = 1; //customer index for arrival
 	int input;
-	Clock myClock(0, input); //initialize clock to 0 and a max value of user choosing
-	CUSTOMQueue myQueue; //initialize Queue
+	Queue myQueue; //initialize Queue
 
 	//1.	Choose a random integer between 1 and x to determine the minute at which the first customer arrives.
 	cout << "Enter a value X for maximum arrival and service delay";
 	cin >> input;
+	Clock myClock(0, input); //initialize clock to 0 and a max value of user choosing
 	arrival = myClock.generateArrival(); //generate the arrival time for the first Customer
 	vector<Customer> custVector(1, Customer()); //Creates an Array of Customers with default constructor
 	custVector[0].setCustomerNumber(1); //generate customer number 1
@@ -30,6 +30,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 
 	/*	2.	At the first customer’s arrival time :
 		Print an arrival message;*/
+	
 		cout << "Customer  " << custVector[0].getCustomerNumber() << " has arrived at "<< custVector[0].getArrivalMinute() << "\n";
 	/*	Determine customer’s service time(random integer from 1 to x); */
 		custVector[1].setServiceTime(myClock.generateServiceTime());
