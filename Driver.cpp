@@ -28,12 +28,14 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 	custVector[0].setCustomerNumber(1); //generate customer number 1
 	custVector[0].setArrivalTime(arrival);
 
-	/*	2.	At the first customer’s arrival time :
-		Print an arrival message;*/
+	//	2.	At the first customer’s arrival time :
+	myClock.setCurrentTime(custVector[0].getArrivalMinute());
+		//Print an arrival message;*/
 	
 		cout << "Customer  " << custVector[0].getCustomerNumber() << " has arrived at "<< custVector[0].getArrivalMinute() << "\n";
 	/*	Determine customer’s service time(random integer from 1 to x); */
 		custVector[0].setServiceTime(myClock.generateServiceTime());
+		custVector[0].setDepartureTime(custVector[0].getServiceTime() + myClock.getCurrentTime());
 		/*Begin servicing the customer;
 		Schedule the arrival time of the next customer(random integer 1 to x added to the current time) */
 		arrival = myClock.generateArrival();
@@ -60,6 +62,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 					arrival = myClock.generateArrival();
 					i++;
 					custVector[i].setArrivalTime(arrival);
+					custVector[i].setCustomerNumber(i + 1);
 				//If service was completed for the last customer :
 			}
 				if (myClock.getCurrentTime() == custVector[currentCustomer].getDepartureMinute())
@@ -68,9 +71,10 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 					cout << "Customer " << custVector[currentCustomer].getCustomerNumber() << " left at " << custVector[currentCustomer].getDepartureMinute() << "\n";
 						//Dequeue the next customer to be serviced;
 					myQueue.dequeue();
+					cout << "segmentation";
 					customerLine = customerLine - 1;
 						//Determine customer’s service completion time;
-					if (custVector[currentCustomer].getDepartureMinute() - custVector[currentCustomer].getServiceTime() - custVector[currentCustomer].getArrivalMinute() > MaxWait) //Check wait time and compare with max
+					if ((custVector[currentCustomer].getDepartureMinute() - custVector[currentCustomer].getServiceTime() - custVector[currentCustomer].getArrivalMinute()) > MaxWait) //Check wait time and compare with max
 					{
 						MaxWait = (custVector[currentCustomer].getDepartureMinute() - custVector[currentCustomer].getServiceTime() - custVector[currentCustomer].getArrivalMinute());
 					}
