@@ -1,13 +1,15 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
 #include "Clock.h"
 #include "Customer.h"
 #include "Queue.h"
-#include <vector>
+
 
 using namespace std;
 
-int main() //Not sure if we had an idea for a driver class so I started this.
+int main()
 {
 	int currentCustomer = 0; //keeps track of the customer being serviced
 	int customerLine = 0; //keeps track of how many customers are in line

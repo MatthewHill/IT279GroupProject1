@@ -17,8 +17,9 @@
 class Customer {
 public:
 	Customer();
-	~Customer();
 	Customer(int arrivalMinute, int departureMinute, int serviceTime, int customerNumber);
+    Customer(const Customer &obj);
+    Customer& operator = (const Customer &obj);
 
 	int getArrivalMinute();
 	int getDepartureMinute();

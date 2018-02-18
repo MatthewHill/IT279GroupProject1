@@ -3,23 +3,44 @@
 #include "Stack.h"
 #include <iostream>
 
+#define NULL nullptr
+
 Stack::Stack(){ top = 0;}
-Stack::~Stack(){}
 
+// Copy Constructor
+Stack::Stack(const Stack &obj){
+    top = obj.top;
+}
+
+// Assignment Operator
+Stack& Stack::operator = (const Stack &obj){
+    top = obj.top;
+}
+
+// Destructor
+Stack::~Stack(){
+    if(top != NULL)
+        delete top;
+}
+
+// Pushes a new node to the top of the stack with two ints and a command.
 void Stack::push(int x, int y, char command){
-  node *newNode = new node();
-  newNode->x = x;
-  newNode->y = y;
-  newNode->command = command;
-  newNode->next = top;
-  top = newNode;
+    node *newNode = new node();
+    newNode->x = x;
+    newNode->y = y;
+    newNode->command = command;
+    newNode->next = top;
+    top = newNode;
+
+    delete newNode;
 }
 
-
+// Returns true if stack is empty.
 bool Stack::isEmpty(){
-  return top == 0;
+  return top == NULL;
 }
 
+// Removes the top element from the stack.
 void Stack::pop() {
   
   if(isEmpty())     

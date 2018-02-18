@@ -21,6 +21,8 @@ node *top;
 
 public:     
     Stack();
+    Stack(const Stack &obj);
+    Stack& operator = (const Stack &obj);
     ~Stack();
     void push(int x, int y, char command);
     void pop();

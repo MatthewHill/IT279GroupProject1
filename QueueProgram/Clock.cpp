@@ -1,12 +1,21 @@
-
 #include "Clock.h"
+
 #include <cstdlib>
 #include <stdlib.h>
 
 Clock::Clock() {
 	Clock(0, 0);
 }
-Clock::~Clock() {};
+
+Clock::Clock(const Clock &obj){
+    currentTime = obj.currentTime;
+    x = obj.x;
+}
+
+Clock& Clock::operator = (const Clock &obj){
+    currentTime = obj.currentTime;
+    x = obj.x;
+}
 
 Clock::Clock(int currentTime, int x) {
 	Clock::currentTime = currentTime;

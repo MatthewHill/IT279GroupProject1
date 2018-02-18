@@ -16,7 +16,9 @@ struct node {
 class Queue {
 public:
 	Queue();
-	~Queue();
+    Queue(const Queue &obj);
+    Queue& operator = (const Queue &obj);
+
 	void enqueue(Customer cust);
 	Customer getCustomer();
 	void dequeue();

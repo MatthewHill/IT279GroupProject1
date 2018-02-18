@@ -7,19 +7,32 @@
 
 #include "Customer.h"
 #include <cstdlib>
-#include <iostream>
-using namespace std;
+
 
 
 Customer::Customer() {
 	Customer(0, 0, 0, 0);
 }
-Customer::~Customer() { }
+
 Customer::Customer(int arrivalMinute, int departureMinute, int serviceTime, int customerNumber) {
 	Customer::arrivalMinute = arrivalMinute;
 	Customer::departureMinute = departureMinute;
 	Customer::serviceTime = serviceTime;
 	Customer::customerNumber = customerNumber;
+}
+
+Customer::Customer(const Customer &obj){
+    arrivalMinute = obj.arrivalMinute;
+    departureMinute = obj.departureMinute;
+    serviceTime = obj.serviceTime;
+    customerNumber = obj.customerNumber;
+}
+
+Customer& Customer::operator = (const Customer &obj){
+    arrivalMinute = obj.arrivalMinute;
+    departureMinute = obj.departureMinute;
+    serviceTime = obj.serviceTime;
+    customerNumber = obj.customerNumber;
 }
 
 int Customer::getArrivalMinute() { return arrivalMinute; }

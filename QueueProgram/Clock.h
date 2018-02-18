@@ -4,8 +4,9 @@
 class Clock {
 public:
 	Clock();
-	~Clock();
 	Clock(int currentTime, int x);
+    Clock(const Clock &obj);
+    Clock& operator = (const Clock &obj);
 
 	int generateArrival();
 	int generateServiceTime();

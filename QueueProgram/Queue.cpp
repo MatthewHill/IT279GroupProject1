@@ -10,14 +10,31 @@
 
 #define NULL nullptr
 
+// No-arg Constructor
 Queue::Queue() {
 	size = 0;
     head = NULL;
     tail = NULL;
     temp = NULL;
 }
-Queue::~Queue() {}
 
+// Copy Constructor
+Queue::Queue(const Queue &obj){
+    size = obj.size;
+    head = obj.head;
+    tail = obj.tail;
+    temp = obj.temp;
+}
+
+// Assignment Operator
+Queue& Queue::operator = (const Queue &obj){
+    size = obj.size;
+    head = obj.head;
+    tail = obj.tail;
+    temp = obj.temp;
+}
+
+// Adds a customer to the back of the queue.
 void Queue::enqueue(Customer cust) {
 	temp = new node;
 	temp->data = cust;
@@ -36,10 +53,12 @@ void Queue::enqueue(Customer cust) {
 	size++;
 }
 
+// Returns the Customer at the front of the queue.
 Customer Queue::getCustomer() {
 	return head->data;
 }
 
+// Removes the Customer at the front of the queue.
 void Queue::dequeue() {
     if(head == NULL){
         std::cout<<"Empty queue.\n";    
@@ -48,6 +67,7 @@ void Queue::dequeue() {
     }
 }
 
+// Returns the size of the queue as int.
 int Queue::getSize() {
 	return size;
 }
