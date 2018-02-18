@@ -6,6 +6,7 @@
 */
 
 #include "Queue.h"
+#include <iostream>
 
 #define NULL nullptr
 
@@ -13,10 +14,11 @@ Queue::Queue() {
 	size = 0;
     head = NULL;
     tail = NULL;
+    temp = NULL;
 }
 
 void Queue::enqueue(Customer cust) {
-	node *temp = new node;
+	temp = new node;
 	temp->data = cust;
 	temp->next = NULL;
 
@@ -27,23 +29,22 @@ void Queue::enqueue(Customer cust) {
 	else {
 		tail->next = temp;
 		tail = temp;
+        tail->next = NULL;
 	}
-    
-    delete temp;
+
 	size++;
 }
 
 Customer Queue::getCustomer() {
-	return (*head).data;
+	return head->data;
 }
 
 void Queue::dequeue() {
-	node* temp = new node;
-	temp = head;
-	head = head->next;
-
-    delete temp;
-	size--;
+    if(head == NULL){
+        std::cout<<"Empty queue.\n";    
+    }else{
+        head = head->next;
+    }
 }
 
 int Queue::getSize() {

@@ -22,8 +22,9 @@ public:
 	void dequeue();
 	int getSize();
 private:
-	node* head; 
-	node* tail;
+	node* head;
+    node* tail;
+    node* temp;
 	int size;
 };
 
