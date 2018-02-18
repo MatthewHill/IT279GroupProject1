@@ -12,7 +12,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 	int currentCustomer = 0; //keeps track of the customer being serviced
 	int customerLine = 0; //keeps track of how many customers are in line
 	int MaxCustomers; //Most customers in line
-	int MaxWait; //Max wait time for all customers
+	int MaxWait = 0; //Max wait time for all customers
 	int arrival; //placeholder for arrival time
 	int customerNumber = 1; //placeholder for customer numbers
 	int i = 1; //customer index for arrival
@@ -28,12 +28,12 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 	custVector[0].setCustomerNumber(1); //generate customer number 1
 	custVector[0].setArrivalTime(arrival);
 
-	//	2.	At the first customer’s arrival time :
+	//	2.	At the first customerâ€™s arrival time :
 	myClock.setCurrentTime(custVector[0].getArrivalMinute());
 		//Print an arrival message;*/
 	
 		cout << "Customer " << custVector[0].getCustomerNumber() << " has arrived at "<< custVector[0].getArrivalMinute() << "\n";
-	/*	Determine customer’s service time(random integer from 1 to x); */
+	/*	Determine customerâ€™s service time(random integer from 1 to x); */
 		custVector[0].setServiceTime(myClock.generateServiceTime());
 		custVector[0].setDepartureTime(custVector[0].getServiceTime() + myClock.getCurrentTime());
 		/*Begin servicing the customer;
@@ -73,7 +73,7 @@ int main() //Not sure if we had an idea for a driver class so I started this.
 					myQueue.dequeue();
 					// cout << "Segmentation";
 					customerLine = customerLine - 1;
-						//Determine customer’s service completion time;
+						//Determine customerâ€™s service completion time;
 					if ((custVector[currentCustomer].getDepartureMinute() - custVector[currentCustomer].getServiceTime() - custVector[currentCustomer].getArrivalMinute()) > MaxWait) //Check wait time and compare with max
 					{
 						MaxWait = (custVector[currentCustomer].getDepartureMinute() - custVector[currentCustomer].getServiceTime() - custVector[currentCustomer].getArrivalMinute());
