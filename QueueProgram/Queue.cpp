@@ -11,7 +11,8 @@
 
 Queue::Queue() {
 	size = 0;
-
+    head = NULL;
+    tail = NULL;
 }
 
 void Queue::enqueue(Customer cust) {
@@ -37,7 +38,7 @@ Customer Queue::getCustomer() {
 }
 
 void Queue::dequeue() {
-	node* temp;
+	node* temp = new node;
 	temp = head;
 	head = head->next;
 

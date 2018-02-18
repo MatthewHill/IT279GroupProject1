@@ -4,12 +4,13 @@
 class Clock {
 public:
 	Clock();
-	Clock(int time, int maxvalue);
+	Clock(int currentTime, int x);
 
 	int generateArrival();
 	int generateServiceTime();
 	int getCurrentTime();
 	void setCurrentTime(int C);
+	void setX(int input);
 private:
 	int currentTime;
 	int x;
