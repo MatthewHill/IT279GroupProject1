@@ -6,6 +6,7 @@
 Clock::Clock() {
 	Clock(0, 0);
 }
+Clock::~Clock() {};
 
 Clock::Clock(int currentTime, int x) {
 	Clock::currentTime = currentTime;

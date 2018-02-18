@@ -16,6 +16,7 @@ Queue::Queue() {
     tail = NULL;
     temp = NULL;
 }
+Queue::~Queue() {}
 
 void Queue::enqueue(Customer cust) {
 	temp = new node;

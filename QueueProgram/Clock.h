@@ -4,6 +4,7 @@
 class Clock {
 public:
 	Clock();
+	~Clock();
 	Clock(int currentTime, int x);
 
 	int generateArrival();

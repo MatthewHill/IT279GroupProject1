@@ -16,7 +16,7 @@ struct node {
 class Queue {
 public:
 	Queue();
-
+	~Queue();
 	void enqueue(Customer cust);
 	Customer getCustomer();
 	void dequeue();

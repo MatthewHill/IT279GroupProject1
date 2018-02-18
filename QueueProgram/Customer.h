@@ -17,6 +17,7 @@
 class Customer {
 public:
 	Customer();
+	~Customer();
 	Customer(int arrivalMinute, int departureMinute, int serviceTime, int customerNumber);
 
 	int getArrivalMinute();
